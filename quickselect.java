@@ -32,9 +32,9 @@ public class quickselect {
         }
         int runtime = (int) elapsedTime;
         //float runtime_ins =  elapsedTime;
-		System.err.println("median,"+output);
-		System.err.println("runtime,"+runtime);
-		System.err.println("comparisons,"+comparisons);
+		System.out.println("median,"+output);
+		System.out.println("runtime,"+runtime);
+		System.out.println("comparisons,"+comparisons);
 
 	}
 	public static int quick_select(int myArray[],int left, int right, int k)
