@@ -9,7 +9,7 @@ public abstract class DefaultSelect implements Comparable<Integer>{
         Scanner input=new Scanner(System.in);
 
         //Parse length of array from first line
-        int length = Integer.parseInt(input.nextLine().replaceAll("n ", ""));
+        //int length = Integer.parseInt(input.nextLine().replaceAll("n ", ""));
 
         int[] myArray= new int[length];
 
@@ -60,7 +60,7 @@ public abstract class DefaultSelect implements Comparable<Integer>{
         //printArray(myArray);
 
         //System.out.println(myArray[Math.floor((myArray.length + 1)/2)]);
-        System.err.println(myArray[(myArray.length + 1)/2]);
+        System.out.println(myArray[(myArray.length + 1)/2]);
 
 
 
