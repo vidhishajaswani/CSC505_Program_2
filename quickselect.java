@@ -1,11 +1,26 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class quickselect {
 		
 	static int comparisons=0;
 	public static void main(String args[])
 	{
-		int myArray[]= new int[] {10,4,5,8,6,11,26,1,2};
+		//int myArray[]= new int[] {10,4,5,8,6,11,26,1,2};
+		
+        Scanner inputScanner = new Scanner(System.in);
+
+        //Parse length of array from first line
+        ArrayList <Integer> input = new ArrayList<Integer>();
+        int length = 0;
+        while (inputScanner.hasNext()){
+          input.add(new Integer(inputScanner.nextInt()));
+          length++;
+        }
+        int[] myArray= new int[length];
+        inputScanner.close();
+        
 		int k=(int) Math.floor((myArray.length+1)/2);
         long startTime = System.currentTimeMillis();
 		int output=quick_select(myArray,0,myArray.length-1,k);
