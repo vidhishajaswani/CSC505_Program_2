@@ -1,5 +1,7 @@
 import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Collections;
 import java.util.Scanner;
 
 
@@ -10,15 +12,15 @@ public abstract class DefaultSelect implements Comparable<Integer>{
 
         //Parse length of array from first line
         //int length = Integer.parseInt(input.nextLine().replaceAll("n ", ""));
-        Arraylist <Integer> input = new Arraylist<Integer>();
+        ArrayList <Integer> input = new ArrayList<Integer>();
         //int[] myArray= new int[length];
         int length = 0;
-        while (inputScanner.hasnext){
-          input.add(Integer(inputScanner.nextInt));
+        while (inputScanner.hasNext()){
+          input.add(new Integer(inputScanner.nextInt()));
           length++;
         }
         int[] myArray= new int[length];
-        input.close();
+        inputScanner.close();
         //read the array
         /*
         for(int i=0;i<length;i++)
@@ -30,7 +32,7 @@ public abstract class DefaultSelect implements Comparable<Integer>{
         long startTime = System.currentTimeMillis();
 
         //overidden function that uses the compare To function and increments the counter
-        Arrays.sort(input, new Comparator<Integer>(){
+        Collections.sort(input, new Comparator<Integer>(){
           //@Override
           public int compare(Integer a, Integer b){
             comparisons++;
@@ -53,7 +55,7 @@ public abstract class DefaultSelect implements Comparable<Integer>{
         System.err.println("comparisons," + comparisons);
 
         //converting Integer objects to int array which is now sorted.
-        i = 0;
+        int i = 0;
         for(Integer intobject : input){
           myArray[i++] = intobject.intValue();
         }
