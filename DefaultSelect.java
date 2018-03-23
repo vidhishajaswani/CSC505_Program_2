@@ -3,7 +3,7 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 
-public abstract class DefaultSort implements Comparable<Integer>{
+public abstract class DefaultSelect implements Comparable<Integer>{
     static int comparisons=0; //global variable to store number of comparisons
     public static void main(String[] args) {
         Scanner input=new Scanner(System.in);
