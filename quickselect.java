@@ -1,23 +1,40 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class quickselect {
 		
+	static int comparisons=0;
 	public static void main(String args[])
 	{
-		int myArray[]= new int[] {10,4,5,8,6,11,26,1,2};
+		//int myArray[]= new int[] {10,4,5,8,6,11,26,1,2};
+		
+        Scanner inputScanner = new Scanner(System.in);
+
+        //Parse length of array from first line
+        ArrayList <Integer> input = new ArrayList<Integer>();
+        int length = 0;
+        while (inputScanner.hasNext()){
+          input.add(new Integer(inputScanner.nextInt()));
+          length++;
+        }
+        int[] myArray= new int[length];
+        inputScanner.close();
+        
 		int k=(int) Math.floor((myArray.length+1)/2);
-       		long startTime = System.currentTimeMillis();
+        long startTime = System.currentTimeMillis();
 		int output=quick_select(myArray,0,myArray.length-1,k);
-        	long endTime = System.currentTimeMillis();
-        	long elapsedTime = endTime - startTime;
-        	if(elapsedTime > Integer.MAX_VALUE)
-        	{
-            		throw new IllegalArgumentException(elapsedTime + "cannot convert to int without modifying value");
-        	}
-        	int runtime = (int) elapsedTime;
-        	float runtime_ins =  elapsedTime;
+        long endTime = System.currentTimeMillis();
+        long elapsedTime = endTime - startTime;
+        if(elapsedTime > Integer.MAX_VALUE)
+        {
+            throw new IllegalArgumentException(elapsedTime + "cannot convert to int without modifying value");
+        }
+        int runtime = (int) elapsedTime;
+        //float runtime_ins =  elapsedTime;
 		System.err.println("median,"+output);
 		System.err.println("runtime,"+runtime);
+		System.err.println("comparisons,"+comparisons);
 
 	}
 	public static int quick_select(int myArray[],int left, int right, int k)
@@ -72,10 +89,15 @@ public class quickselect {
 		while(true)
 		{
 			while(myLeft<right && myArray[myLeft]<pivot)
+			{
 				myLeft++;
-			
+				comparisons++;
+			}
 			while(myRight>left && myArray[myRight]>pivot)
+			{
 				myRight--;
+				comparisons++;
+			}
 			
 			if(myLeft>=myRight)
 				break;
