@@ -1,3 +1,3 @@
 #!/bin/bash
 
-java DefaultSort
+java DefaultSelect
