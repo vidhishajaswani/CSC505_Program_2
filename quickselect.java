@@ -6,16 +6,16 @@ public class quickselect {
 	{
 		int myArray[]= new int[] {10,4,5,8,6,11,26,1,2};
 		int k=(int) Math.floor((myArray.length+1)/2);
-        long startTime = System.currentTimeMillis();
+       		long startTime = System.currentTimeMillis();
 		int output=quick_select(myArray,0,myArray.length-1,k);
-        long endTime = System.currentTimeMillis();
-        long elapsedTime = endTime - startTime;
-        if(elapsedTime > Integer.MAX_VALUE)
-        {
-            throw new IllegalArgumentException(elapsedTime + "cannot convert to int without modifying value");
-        }
-        int runtime = (int) elapsedTime;
-        float runtime_ins =  elapsedTime;
+        	long endTime = System.currentTimeMillis();
+        	long elapsedTime = endTime - startTime;
+        	if(elapsedTime > Integer.MAX_VALUE)
+        	{
+            		throw new IllegalArgumentException(elapsedTime + "cannot convert to int without modifying value");
+        	}
+        	int runtime = (int) elapsedTime;
+        	float runtime_ins =  elapsedTime;
 		System.err.println("median,"+output);
 		System.err.println("runtime,"+runtime);
 
