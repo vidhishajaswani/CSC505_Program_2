@@ -22,8 +22,9 @@ public class quickselect {
         inputScanner.close();
         
 		int k=(int) Math.floor((myArray.length+1)/2);
-        long startTime = System.currentTimeMillis();
+       		long startTime = System.currentTimeMillis();
 		int output=quick_select(myArray,0,myArray.length-1,k);
+<<<<<<< HEAD
         long endTime = System.currentTimeMillis();
         long elapsedTime = endTime - startTime;
         if(elapsedTime > Integer.MAX_VALUE)
@@ -32,6 +33,16 @@ public class quickselect {
         }
         int runtime = (int) elapsedTime;
         //float runtime_ins =  elapsedTime;
+=======
+        	long endTime = System.currentTimeMillis();
+        	long elapsedTime = endTime - startTime;
+        	if(elapsedTime > Integer.MAX_VALUE)
+        	{
+            		throw new IllegalArgumentException(elapsedTime + "cannot convert to int without modifying value");
+        	}
+        	int runtime = (int) elapsedTime;
+        	float runtime_ins =  elapsedTime;
+>>>>>>> b2834328b5dafd9ab2b5bdfb0d4a130bda0e1c93
 		System.err.println("median,"+output);
 		System.err.println("runtime,"+runtime);
 		System.err.println("comparisons,"+comparisons);
