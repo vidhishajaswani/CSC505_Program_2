@@ -1,10 +1,12 @@
+import java.util.Arrays;
 
 public class quickselect {
 		
 	public static void main(String args[])
 	{
-		int myArray[]= new int[] {10,4,5,8,6,11,26};
+		int myArray[]= new int[] {10,4,5,8,6,11,26,1,2};
 		int k=(int) Math.floor((myArray.length+1)/2);
+		//System.out.println(k);
 		//int k=myArray.length;
 		int output=quick_select(myArray,0,myArray.length-1,k);
 		System.out.println(output);
@@ -35,16 +37,24 @@ public class quickselect {
 	public static int partition(int myArray[],int left,int right)
 	{
 		int pivot;
-	/*	if(myArray.length<9)
+		if(myArray.length<9)
 		{
 			pivot=myArray[left];
 		}
 		else
 		{
+			int tempArray[]=new int[3];
+			tempArray[0]=myArray[left];
+			int mid=(right-left+1)/2;
+			tempArray[1]=myArray[mid];
+			tempArray[2]=myArray[right];
+			Arrays.sort(tempArray);
+			//System.out.println(Arrays.toString(tempArray));
+			pivot=tempArray[1];
 			
-		}*/
+		}
 		
-		pivot=myArray[left];
+		//pivot=myArray[left];
 		
 		int myLeft=left+1;
 		int myRight=right;
