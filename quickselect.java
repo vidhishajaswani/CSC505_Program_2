@@ -1,0 +1,81 @@
+
+public class quickselect {
+		
+	public static void main(String args[])
+	{
+		int myArray[]= new int[] {10,4,5,8,6,11,26};
+		int k=(int) Math.floor((myArray.length+1)/2);
+		//int k=myArray.length;
+		int output=quick_select(myArray,0,myArray.length-1,k);
+		System.out.println(output);
+	}
+	public static int quick_select(int myArray[],int left, int right, int k)
+	{
+		if(k>0 && k<=right-left+1)
+		{
+			if(left==right)
+				return myArray[left];
+			
+			
+			int myIndex=partition(myArray,left,right);
+			int current=myIndex-left+1;
+			if(current==k)
+				return myArray[myIndex];
+			
+			else if(k<current)
+			{
+				return quick_select(myArray,left,myIndex-1,k);
+			}
+			else return quick_select(myArray,myIndex+1,right,k-current);
+		}
+		
+		return 0;
+		
+	}
+	public static int partition(int myArray[],int left,int right)
+	{
+		int pivot;
+	/*	if(myArray.length<9)
+		{
+			pivot=myArray[left];
+		}
+		else
+		{
+			
+		}*/
+		
+		pivot=myArray[left];
+		
+		int myLeft=left+1;
+		int myRight=right;
+		
+		
+		while(true)
+		{
+			while(myLeft<right && myArray[myLeft]<pivot)
+				myLeft++;
+			
+			while(myRight>left && myArray[myRight]>pivot)
+				myRight--;
+			
+			if(myLeft>=myRight)
+				break;
+			
+			else
+			{
+				int temp=myArray[myLeft];
+				myArray[myLeft]=myArray[myRight];
+				myArray[myRight]=temp;
+			}
+				
+			
+		}
+		int temp=myArray[left];
+		myArray[left]=myArray[myRight];
+		myArray[myRight]=temp;
+		
+		return myRight;
+		
+	}
+	
+}
