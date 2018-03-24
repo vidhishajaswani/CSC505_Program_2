@@ -48,7 +48,7 @@ public class quickselect {
 			for(Elements e : em){
 				valueArray[i] = e.value;
 				indexArray[i] = e.index;
-				//i++;
+				i++;
 			}
 			System.out.println("After : " + Arrays.toString(valueArray));
 
