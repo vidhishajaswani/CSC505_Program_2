@@ -55,6 +55,7 @@ public class quickselect {
 			//System.out.println("before :" + Arrays.toString(arr));
 			//int indexToBeSwapped = (b-a)/2;
 			int indexToBeSwapped = indexArray[1];
+			System.out.println("Selected : " + arr[indexToBeSwapped]);
 			int temp = arr[b];
 			arr[b] = arr[indexToBeSwapped];
 			arr[indexToBeSwapped] = temp;
