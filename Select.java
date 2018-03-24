@@ -58,7 +58,7 @@ public class Select {
 			} else if(index > medianIndex){
 				return quickselect(arr, a, medianIndex - 1);
 			}else{
-				return quick_select(arr, medianIndex + 1, b);
+				return quickselect(arr, medianIndex + 1, b);
 			}
 
 		}
