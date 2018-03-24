@@ -20,8 +20,9 @@ public class quickselect {
 
 		//Quicksort begins
 
-		int i = a - 1;
-		for(int j = a; j < b; j++){
+		int i = a;
+		for(int j = a; j < b; j++)
+			{
 			if(arr[j] <= pivot){
 				i++;
 				int temp = arr[i];
@@ -29,15 +30,15 @@ public class quickselect {
 				arr[j] = temp;
 			}
 		}
-		int temp = arr[i+1];
-		arr[i+1] = arr[b];
+		int temp = arr[i];
+		arr[i] = arr[b];
 		arr[b] = temp;
-		return i+1;
+		return i;
 
 	}
 
 	int quickselect(int arr[], int a, int b){
-		int medianIndex = (arr.length+1)/2;
+		int medianIndex = (int) Math.floor((arr.length+1)/2);
 		System.err.println(a + " vs " + b);
 		if(a <= b){
 			int index = partition(arr, a, b);
