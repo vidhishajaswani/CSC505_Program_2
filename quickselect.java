@@ -74,7 +74,7 @@ public class quickselect {
 		quickselect qs = new quickselect();
 		int answer = qs.quickselect(arr, 0, n-1);
 		//int answer = quickselect(arr, 0, n-1);
-		System.out.println(arr[answer]);
+		System.out.println("median," + arr[answer]);
 
 	}
 
