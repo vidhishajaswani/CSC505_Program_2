@@ -23,6 +23,7 @@ public class quickselect {
 			pivotIndex = b;
 		}
 		else{
+			/*
 			ArrayList <Elements> em = new ArrayList<Elements>();
 			em.add(new Elements(arr[a], a));
 			em.add(new Elements(arr[b], b));
@@ -46,9 +47,11 @@ public class quickselect {
 				indexArray[i] = e.index;
 				//i++;
 			}
+			*/
 
 			//System.out.println("before :" + Arrays.toString(arr));
-			int indexToBeSwapped = indexArray[1];
+			int indexToBeSwapped = a;
+			//int indexToBeSwapped = indexArray[1];
 			int temp = arr[b];
 			arr[b] = arr[indexToBeSwapped];
 			arr[indexToBeSwapped] = temp;
