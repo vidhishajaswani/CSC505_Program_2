@@ -32,8 +32,10 @@ public class quickselect {
 		int temp = arr[i+1];
 		arr[i+1] = arr[b];
 		arr[b] = temp;
+		
 		if((i+1) == (arr.length-1)/2){
 			System.out.println("median" + arr[i+1]);
+			return 0;
 		}else{
 			return i+1;
 		}
