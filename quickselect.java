@@ -86,6 +86,9 @@ public class quickselect {
 		quickselect qs = new quickselect();
 		int answer = qs.quickselect(arr, 0, n-1);
 		//int answer = quickselect(arr, 0, n-1);
+		System.err.println("index," + answer);
+		System.err.println("aaju," + arr[answer-1]);
+		System.err.println("baju," + arr[answer+1]);
 		System.out.println("median," + arr[answer]);
 
 	}
