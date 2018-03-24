@@ -1,4 +1,9 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.Collections;
+
 
 
 class Elements{
@@ -41,12 +46,12 @@ public class quickselect {
 				indexArray[i] = e.index;
 			}
 
-			System.out.println("before :" + Arrays.toString(arr));
+			//System.out.println("before :" + Arrays.toString(arr));
 			int indexToBeSwapped = indexArray[1];
 			int temp = arr[b];
 			arr[b] = arr[indexToBeSwapped];
 			arr[indexToBeSwapped] = temp;
-			System.out.println("after :" + Arrays.toString(arr));
+			//System.out.println("after :" + Arrays.toString(arr));
 			pivotIndex = b;
 		}
 		int temp = 0;
@@ -57,13 +62,11 @@ public class quickselect {
 				temp = arr[i];
 				arr[i] = arr[j];
 				arr[j] = temp;
-				//System.out.println("andar " + Arrays.toString(arr));
 			}
 		}
 		temp = arr[i+1];
 		arr[i+1] = arr[pivotIndex];
 		arr[pivotIndex] = temp;
-		//System.out.println("bahar " + Arrays.toString(arr));
 		return i + 1;
 
 
@@ -109,19 +112,3 @@ public class quickselect {
 
 
 }
-
-//Input
-/*Scanner inputScanner = new Scanner(System.in);
-arrList <Integer> input = new arrList<Integer>();
-int n = 0;
-while (inputScanner.hasNext()){
-	input.add(new Integer(inputScanner.nextInt()));
-	n++;
-}
-inputScanner.close();
-int[] arr= new int[n];
-int i = 0;
-for(Integer intobject : input){
-	arr[i++] = intobject.intValue();
-}
-*/
