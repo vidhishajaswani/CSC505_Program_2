@@ -32,17 +32,20 @@ public class quickselect {
 		int temp = arr[i+1];
 		arr[i+1] = arr[b];
 		arr[b] = temp;
-		return i+1;
-
+		if((i+1) == (arr.length-1)/2){
+			System.out.println("median" + arr[i+1]);
+		}else{
+			return i+1;
+		}
 	}
 
 	int quickselect(int arr[], int a, int b){
-		int medianIndex = (arr.length+1)/2;
+		int medianIndex = (arr.length-1)/2;
 		System.err.println(a + " vs " + b);
 		if(a <= b){
 			int index = partition(arr, a, b);
-			if(index == (medianIndex)){
-				return index;
+			if(index == 0){
+				return 0;
 			} else if(index > medianIndex){
 				return quickselect(arr, a, index - 1);
 			}else{
