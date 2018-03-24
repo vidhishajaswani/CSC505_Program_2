@@ -57,9 +57,9 @@ public class quickselect {
 			if(index == (medianIndex)){
 				return index;
 			} else if(index > medianIndex){
-				return quickselect(arr, a, medianIndex - 1);
+				return quickselect(arr, a, index - 1);
 			}else{
-				return quickselect(arr, medianIndex + 1, b);
+				return quickselect(arr, index + 1, b);
 			}
 
 		}
