@@ -5,34 +5,21 @@ import java.util.Scanner;
 public class quickselect {
 
 	int partition(int arr[], int a, int b){
-		int pivotIndex = 0;
+		int pivot;
 
 		//Pivot Selection
 		if((b-a+1) < 9){
-			pivotIndex = b;
+			pivot = arr[b];
 		}else {
 			int middle = (b-a)/2;
 
-			if(arr[a]>arr[b]){
-				if(arr[middle]>arr[a]){
-					pivotIndex = a;
-				}else if(arr[middle]>arr[b]){
-					pivotIndex = middle;
-				}else{
-					pivotIndex = b;
-				}
-			}else{
-					if(arr[middle]>arr[b]){
-						pivotIndex = b;
-					}else if(arr[middle]>arr[a]){
-						pivotIndex = middle;
-					}else{
-						pivotIndex = a;
-					}
-			}
+			int temp[] = {arr[a], arr[b], arr[middle]};
+			Arrays.sort(temp);
+			pivot = temp[1];
 		}
+
 		//Quicksort begins
-		int pivot = arr[pivotIndex];
+
 		int i = a - 1;
 		for(int j = a; j < b; j++){
 			if(arr[j] <= pivot){
