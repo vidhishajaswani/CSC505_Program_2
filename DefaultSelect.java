@@ -62,7 +62,8 @@ public abstract class DefaultSelect implements Comparable<Integer>{
         //printArray(myArray);
 
         //System.out.println(myArray[Math.floor((myArray.length + 1)/2)]);
-        int index = (int)Math.floor((myArray.length)/2);
-        System.out.println(myArray[index]);
+        int kIndex = (int)Math.floor((myArray.length + 1)/2);
+        int index = kIndex - 1;
+        System.out.println(myArray[kIndex]);
     }
 }
