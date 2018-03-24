@@ -23,11 +23,14 @@ public class quickselect {
 			pivotIndex = b;
 		}
 		else{
-			/*
+
 			ArrayList <Elements> em = new ArrayList<Elements>();
+
 			em.add(new Elements(arr[a], a));
 			em.add(new Elements(arr[b], b));
 			em.add(new Elements(arr[(b-a)/2], (b-a)/2));
+
+			System.out.println("Before : " + arr[a] + " " + arr[b] + " " + arr[(b-a)/2]);
 
 			Collections.sort(em, new Comparator<Elements>(){
 			          //@Override
@@ -47,11 +50,11 @@ public class quickselect {
 				indexArray[i] = e.index;
 				//i++;
 			}
-			*/
+			System.out.println("After : " + Arrays.toString(valueArray));
 
 			//System.out.println("before :" + Arrays.toString(arr));
-			int indexToBeSwapped = (b-a-1)/2;
-			//int indexToBeSwapped = indexArray[1];
+			//int indexToBeSwapped = (b-a)/2;
+			int indexToBeSwapped = indexArray[1];
 			int temp = arr[b];
 			arr[b] = arr[indexToBeSwapped];
 			arr[indexToBeSwapped] = temp;
