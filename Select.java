@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class quickselect {
+public class Select {
 
 	int partition(int arr[], int a, int b){
 		int pivotIndex = 0;
@@ -48,7 +48,7 @@ public class quickselect {
 		return i+1;
 
 	}
-
+	
 	int quickselect(int arr[], int a, int b){
 		int medianIndex = (arr.length+1)/2;
 		if(low < high){
