@@ -106,7 +106,7 @@ public class quickselect {
 		}
 		quickselect qs = new quickselect();
 		qs.quickselect(arr, 0, n-1);
-		System.out.println(Arrays.toString(arr));
+		//System.out.println(Arrays.toString(arr));
 	}
 
 
