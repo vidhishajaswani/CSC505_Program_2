@@ -9,7 +9,7 @@ public class quickselect {
 
 		//Pivot Selection
 		if((b-a+1) < 9){
-			pivot = arr[b];
+			pivot = arr[a];
 		}else {
 			int middle = (b-a)/2;
 
