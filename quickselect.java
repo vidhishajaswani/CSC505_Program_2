@@ -69,7 +69,7 @@ public class quickselect {
 		for(Integer intobject : input){
 			arr[i++] = intobject.intValue();
 		}
-		System.err.println(arr);
+		System.err.println(Arrays.toString(arr));
 
 		quickselect qs = new quickselect();
 		int answer = qs.quickselect(arr, 0, n-1);
