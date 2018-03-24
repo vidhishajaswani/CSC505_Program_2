@@ -69,6 +69,7 @@ public class quickselect {
 		int arr[] = {10, 7, 8, 9, 1, 5};
 		int n = arr.length;
 		int answer = quickselect(arr, 0, n-1);
+		System.out.println(arr[answer]);
 
 	}
 
