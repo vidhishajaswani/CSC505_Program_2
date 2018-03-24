@@ -51,7 +51,7 @@ public class quickselect {
 
 	int quickselect(int arr[], int a, int b){
 		int medianIndex = (arr.length+1)/2;
-		if(a < b){
+		if(a <= b){
 			int index = partition(arr, a, b);
 			if(index == (medianIndex)){
 				return index;
