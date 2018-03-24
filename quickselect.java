@@ -70,6 +70,7 @@ public class quickselect {
 		for(Integer intobject : input){
 			arr[i++] = intobject.intValue();
 		}
+		System.err.println(arr);
 
 		quickselect qs = new quickselect();
 		System.err.println("n : " + n);
