@@ -32,7 +32,12 @@ public class quickselect {
 		int temp = arr[i+1];
 		arr[i+1] = arr[b];
 		arr[b] = temp;
-		return i+1;
+		//return i + 1;
+		if((i+1) == (arr.length-1)/2){
+			System.out.println("median," + arr[i+1]);
+			return 0;
+		}
+		else return i+1;
 
 	}
 
@@ -41,8 +46,8 @@ public class quickselect {
 		System.err.println(a + " vs " + b);
 		if(a <= b){
 			int index = partition(arr, a, b);
-			if(index == (medianIndex)){
-				return index;
+			if(index == 0){
+				return 0;
 			} else if(index > medianIndex){
 				return quickselect(arr, a, index - 1);
 			}else{
@@ -70,7 +75,7 @@ public class quickselect {
 		for(Integer intobject : input){
 			arr[i++] = intobject.intValue();
 		}
-		System.err.println(Arrays.toString(arr));
+		//System.err.println(Arrays.toString(arr));
 
 		quickselect qs = new quickselect();
 		int answer = qs.quickselect(arr, 0, n-1);
@@ -78,7 +83,7 @@ public class quickselect {
 		System.err.println("index," + answer);
 		System.err.println("aaju," + arr[answer-1]);
 		System.err.println("baju," + arr[answer+1]);
-		System.out.println("median," + arr[answer]);
+		//System.out.println("median," + arr[answer]);
 
 	}
 
