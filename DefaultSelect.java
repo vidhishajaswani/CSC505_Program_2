@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public abstract class DefaultSelect implements Comparable<Integer>
 {
-    static int comparisons=0; 	//global variable to store number of comparisons
+    static int comparisons=0;   //global variable to store number of comparisons
     public static void main(String[] args) 
     {
         Scanner inputScanner = new Scanner(System.in);
