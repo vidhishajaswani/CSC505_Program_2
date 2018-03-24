@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class quickselect {
 
 	int partition(int arr[], int a, int b){
-		int pivot;
+		int pivot = 0;
 
 		//Pivot Selection
 		if((b-a+1) < 9){
@@ -65,13 +65,15 @@ public class quickselect {
 			n++;
 		}
 		inputScanner.close();
-		int[] arr= new int[n];
+
+		int[] arr = new int[n];
 		int i = 0;
 		for(Integer intobject : input){
 			arr[i++] = intobject.intValue();
 		}
 
 		quickselect qs = new quickselect();
+		System.err.println("n : " + n);
 		int answer = qs.quickselect(arr, 0, n-1);
 		//int answer = quickselect(arr, 0, n-1);
 		System.err.println("index," + answer);
