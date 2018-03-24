@@ -69,8 +69,19 @@ public class quickselect {
 	}
 	public static void main(String args[])
 	{
-		int arr[] = {10, 7, 8, 9, 1, 5};
-		int n = arr.length;
+		Scanner inputScanner = new Scanner(System.in);
+		ArrayList <Integer> input = new ArrayList<Integer>();
+		int length = 0;
+		while (inputScanner.hasNext()){
+			input.add(new Integer(inputScanner.nextInt()));
+			length++;
+		}
+		inputScanner.close();
+		int[] arr= new int[length];
+		for(Integer intobject : input){
+			arr[i++] = intobject.intValue();
+		}
+
 		quickselect qs = new quickselect();
 		int answer = qs.quickselect(arr, 0, n-1);
 		//int answer = quickselect(arr, 0, n-1);
