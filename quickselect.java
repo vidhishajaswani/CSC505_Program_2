@@ -62,6 +62,7 @@ public class quickselect {
 			}
 
 		}
+		System.err.println(a + ">" + b);
 		return -1;
 
 	}
