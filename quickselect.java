@@ -72,20 +72,21 @@ public class quickselect {
 
 	}
 
-	void quickselect(int arr[], int a, int b){
+	int quickselect(int arr[], int a, int b){
 		int medianIndex = (arr.length-1)/2;
 		if(a <= b){
 			int index = giveCorrectIndex(arr, a, b);
 
 			if(index == medianIndex){
-				System.out.println("median," + arr[index]);
+				return index;
 			}
 			else if(index > medianIndex){
-				quickselect(arr, a, index - 1);
+				return quickselect(arr, a, index - 1);
 			}else{
-				quickselect(arr, index + 1, b);
+				return quickselect(arr, index + 1, b);
 			}
 		}
+		return -1;
 
 	}
 
@@ -105,7 +106,9 @@ public class quickselect {
 			arr[i++] = intobject.intValue();
 		}
 		quickselect qs = new quickselect();
-		qs.quickselect(arr, 0, n-1);
+		int index=qs.quickselect(arr, 0, n-1);
+		System.out.println("median," + arr[index]);
+
 		//System.out.println(Arrays.toString(arr));
 	}
 
