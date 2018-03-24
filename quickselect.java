@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class quickselect {
 
 	int partition(int arr[], int a, int b){
-		int pivot = 0;
+		int pivot;
 
 		//Pivot Selection
 		if((b-a+1) < 9){
@@ -20,9 +20,8 @@ public class quickselect {
 
 		//Quicksort begins
 
-		int i = a;
-		for(int j = a; j < b; j++)
-			{
+		int i = a - 1;
+		for(int j = a; j < b; j++){
 			if(arr[j] <= pivot){
 				i++;
 				int temp = arr[i];
@@ -30,15 +29,15 @@ public class quickselect {
 				arr[j] = temp;
 			}
 		}
-		int temp = arr[i];
-		arr[i] = arr[b];
+		int temp = arr[i+1];
+		arr[i+1] = arr[b];
 		arr[b] = temp;
-		return i;
+		return i+1;
 
 	}
 
 	int quickselect(int arr[], int a, int b){
-		int medianIndex = (int) Math.floor((arr.length+1)/2);
+		int medianIndex = (arr.length+1)/2;
 		System.err.println(a + " vs " + b);
 		if(a <= b){
 			int index = partition(arr, a, b);
@@ -65,15 +64,13 @@ public class quickselect {
 			n++;
 		}
 		inputScanner.close();
-
-		int[] arr = new int[n];
+		int[] arr= new int[n];
 		int i = 0;
 		for(Integer intobject : input){
 			arr[i++] = intobject.intValue();
 		}
 
 		quickselect qs = new quickselect();
-		System.err.println("n : " + n);
 		int answer = qs.quickselect(arr, 0, n-1);
 		//int answer = quickselect(arr, 0, n-1);
 		System.err.println("index," + answer);
