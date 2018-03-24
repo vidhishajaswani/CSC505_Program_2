@@ -63,7 +63,7 @@ public abstract class DefaultSelect implements Comparable<Integer>{
 
         //System.out.println(myArray[Math.floor((myArray.length + 1)/2)]);
         int kIndex = (int)Math.floor((myArray.length + 1)/2);
-        int index = kIndex - 1;
+        int index = kIndex - 2;
         System.out.println("median," + myArray[kIndex]);
     }
 }
