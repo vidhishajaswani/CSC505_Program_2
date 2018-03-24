@@ -50,7 +50,7 @@ public class quickselect {
 				indexArray[i] = e.index;
 				i++;
 			}
-			System.out.println("After : " + Arrays.toString(valueArray));
+			System.out.println("After : " + Arrays.toString(indexArray));
 
 			//System.out.println("before :" + Arrays.toString(arr));
 			int indexToBeSwapped = (b-a)/2;
