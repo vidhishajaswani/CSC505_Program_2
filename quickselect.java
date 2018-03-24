@@ -71,13 +71,14 @@ public class quickselect {
 	{
 		Scanner inputScanner = new Scanner(System.in);
 		ArrayList <Integer> input = new ArrayList<Integer>();
-		int length = 0;
+		int n = 0;
 		while (inputScanner.hasNext()){
 			input.add(new Integer(inputScanner.nextInt()));
-			length++;
+			n++;
 		}
 		inputScanner.close();
-		int[] arr= new int[length];
+		int[] arr= new int[n];
+		int i = 0;
 		for(Integer intobject : input){
 			arr[i++] = intobject.intValue();
 		}
