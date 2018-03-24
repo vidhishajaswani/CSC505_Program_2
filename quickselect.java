@@ -31,7 +31,7 @@ public class quickselect {
 			em.add(new Elements(arr[(b-a)/2], (b-a)/2));
 
 			//System.out.println("Before : " + arr[a] + " " + arr[b] + " " + arr[(b-a)/2]);
-			System.out.println("Before : " + a + " " + b + " " + (b-a)/2);
+			//System.out.println("Before : " + a + " " + b + " " + (b-a)/2);
 			Collections.sort(em, new Comparator<Elements>(){
 			          //@Override
 			          public int compare(Elements a, Elements b){
@@ -50,12 +50,12 @@ public class quickselect {
 				indexArray[i] = e.index;
 				i++;
 			}
-			System.out.println("After : " + Arrays.toString(indexArray));
+			//System.out.println("After : " + Arrays.toString(indexArray));
 
 			//System.out.println("before :" + Arrays.toString(arr));
 			int indexToBeSwapped = (b-a)/2;
 			//int indexToBeSwapped = indexArray[1];
-			System.out.println("Selected : " + indexToBeSwapped);
+			//System.out.println("Selected : " + indexToBeSwapped);
 			int temp = arr[b];
 			arr[b] = arr[indexToBeSwapped];
 			arr[indexToBeSwapped] = temp;
@@ -117,7 +117,7 @@ public class quickselect {
 		int index=qs.quickselect(arr, 0, n-1);
 		System.out.println("median," + arr[index]);
 
-		//System.out.println(Arrays.toString(arr));
+		System.out.println(Arrays.toString(arr));
 	}
 
 
