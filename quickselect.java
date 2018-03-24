@@ -58,7 +58,7 @@ public class quickselect {
 			} else if(index > medianIndex){
 				return quickselect(arr, a, medianIndex - 1);
 			}else{
-				return quick_select(arr, medianIndex + 1, b);
+				return quickselect(arr, medianIndex + 1, b);
 			}
 
 		}
@@ -68,7 +68,9 @@ public class quickselect {
 	{
 		int arr[] = {10, 7, 8, 9, 1, 5};
 		int n = arr.length;
-		int answer = quickselect(arr, 0, n-1);
+		quickselect qs = new quickselect();
+		int answer = qs.quickselect(arr, 0, n-1);
+		//int answer = quickselect(arr, 0, n-1);
 		System.out.println(arr[answer]);
 
 	}
