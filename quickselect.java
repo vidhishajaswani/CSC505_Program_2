@@ -4,8 +4,35 @@ import java.util.Scanner;
 
 public class quickselect {
 
+<<<<<<< HEAD
 	int partition(int arr[], int a, int b){
 		int pivotIndex = 0;
+=======
+        //Parse length of array from first line
+        ArrayList <Integer> input = new ArrayList<Integer>();
+        int length = 0;
+        while (inputScanner.hasNext()){
+          input.add(new Integer(inputScanner.nextInt()));
+          length++;
+        }
+        int[] myArray= new int[length];
+        inputScanner.close();
+        
+		int k=(int) Math.floor((myArray.length+1)/2);
+        long startTime = System.currentTimeMillis();
+		int output=quick_select(myArray,0,myArray.length-1,k);
+        long endTime = System.currentTimeMillis();
+        long elapsedTime = endTime - startTime;
+        if(elapsedTime > Integer.MAX_VALUE)
+        {
+            throw new IllegalArgumentException(elapsedTime + "cannot convert to int without modifying value");
+        }
+        int runtime = (int) elapsedTime;
+        //float runtime_ins =  elapsedTime;
+		System.out.println("median,"+output);
+		System.out.println("runtime,"+runtime);
+		System.out.println("comparisons,"+comparisons);
+>>>>>>> 69567dcbda38d65a59f3fc0f0ce2a83d48fbf9b3
 
 		//Pivot Selection
 		if((b-a+1) < 9){

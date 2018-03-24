@@ -51,8 +51,8 @@ public abstract class DefaultSelect implements Comparable<Integer>{
         //Typecast to integer and write to variable
         int runtime = (int) elapsedTime;
         //Write runtime and key comparisons to standard error
-        System.err.println("runtime," + runtime);
-        System.err.println("comparisons," + comparisons);
+        System.out.println("runtime," + runtime);
+        System.out.println("comparisons," + comparisons);
 
         //converting Integer objects to int array which is now sorted.
         int i = 0;
