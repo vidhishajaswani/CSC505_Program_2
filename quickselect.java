@@ -64,7 +64,7 @@ public class quickselect {
 		}
 		int temp = 0;
 		int i = a - 1;
-		for(int j = a; j < b; j++){
+		for(int j = a; j <= b; j++){
 			if(arr[j] < arr[pivotIndex]){
 				i++;
 				temp = arr[i];
