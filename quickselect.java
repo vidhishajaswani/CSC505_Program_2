@@ -11,7 +11,6 @@ public class quickselect {
 		
         Scanner inputScanner = new Scanner(System.in);
 
-<<<<<<< HEAD
         //Parse length of array from first line
         ArrayList <Integer> input = new ArrayList<Integer>();
         int length = 0;
@@ -42,46 +41,8 @@ public class quickselect {
 		System.out.println("median,"+output);
 		//System.err.println("runtime,"+runtime);
 		//System.err.println("comparisons,"+comparisons);
-=======
-	int partition(int arr[], int a, int b){
-		int pivot;
 
-		//Pivot Selection
-		if((b-a+1) < 9){
-			pivot = arr[a];
-		}else {
-			int middle = (b-a)/2;
-
-			int temp[] = {arr[a], arr[b], arr[middle]};
-			Arrays.sort(temp);
-			pivot = temp[1];
-		}
-
-		//Quicksort begins
-
-		int i = a - 1;
-		for(int j = a; j < b; j++){
-			if(arr[j] <= pivot){
-				i++;
-				int temp = arr[i];
-				arr[i] = arr[j];
-				arr[j] = temp;
-			}
-		}
-		int temp = arr[i+1];
-		arr[i+1] = arr[b];
-		arr[b] = temp;
->>>>>>> df3605ff78c8e48e48765dc09d001fe43858aaa3
-
-		if((i+1) == (arr.length-1)/2){
-			System.err.println(i+1);
-			System.out.println("median," + arr[i+1]);
-			return 0;
-		}else{
-			return i+1;
-		}
 	}
-<<<<<<< HEAD
 	public static int quick_select(int myArray[],int left, int right, int k)
 	{
 		if(k>0 && k<=right-left+1)
@@ -98,20 +59,6 @@ public class quickselect {
 			else if(k<current)
 			{
 				return quick_select(myArray,left,myIndex-1,k);
-=======
-
-	int quickselect(int arr[], int a, int b){
-		int medianIndex = (arr.length-1)/2;
-		System.err.println(a + " vs " + b);
-		if(a <= b){
-			int index = partition(arr, a, b);
-			if(index == 0){
-				return 0;
-			} else if(index > medianIndex){
-				return quickselect(arr, a, index - 1);
-			}else{
-				return quickselect(arr, index + 1, b);
->>>>>>> df3605ff78c8e48e48765dc09d001fe43858aaa3
 			}
 			else return quick_select(myArray,myIndex+1,right,k-current);
 		}
@@ -138,7 +85,6 @@ public class quickselect {
 			pivot=tempArray[1];
 			
 		}
-<<<<<<< HEAD
 		
 		//pivot=myArray[left];
 		
@@ -177,17 +123,6 @@ public class quickselect {
 		
 		return myRight;
 		
-=======
-
-		quickselect qs = new quickselect();
-		int answer = qs.quickselect(arr, 0, n-1);
-		//int answer = quickselect(arr, 0, n-1);
-		//System.err.println("index," + answer);
-		//System.err.println("aaju," + arr[answer-1]);
-		//System.err.println("baju," + arr[answer+1]);
-		//System.out.println("median," + arr[answer]);
-
->>>>>>> df3605ff78c8e48e48765dc09d001fe43858aaa3
 	}
 	
 }
