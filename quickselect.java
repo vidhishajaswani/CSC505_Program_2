@@ -69,7 +69,7 @@ public class quickselect {
 	public static int partition(int myArray[],int left,int right)
 	{
 		int pivot;
-		if(myArray.length<9)
+		if(right-left+1<9)
 		{
 			pivot=myArray[left];
 		}
