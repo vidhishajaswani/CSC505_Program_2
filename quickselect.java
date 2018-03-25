@@ -17,7 +17,6 @@ class Elements{
 public class quickselect {
 
 	static int comparisons=0;		//global variable to store number of comparisons
-	static Integer x, y;
 
 	int giveCorrectIndex(int arr[], int a, int b){
 		int pivotIndex = 0;
@@ -62,7 +61,6 @@ public class quickselect {
 		int temp = 0;
 		int i = a - 1;
 		for(int j = a; j < b; j++){
-			//if(arr[j] < arr[pivotIndex]){
 			if(compare(arr,pivotIndex,j)) {
 				//arrange elements such that elements on left of pivot are less than pivot and more than it are on right 
 				i++;
@@ -119,10 +117,15 @@ public class quickselect {
 			arr[i++] = intobject.intValue();
 		}
 		quickselect qs = new quickselect();
+		
+		//note start time
         long startTime = System.currentTimeMillis();
 		int index=qs.quickselect(arr, 0, n-1);
+		
+		//note end time
         long endTime = System.currentTimeMillis();
 
+        //calculate elapsed time
         long elapsedTime = endTime - startTime;
 
         if(elapsedTime > Integer.MAX_VALUE)
@@ -142,9 +145,6 @@ public class quickselect {
 	public static boolean compare(int arr[],int l,int r)
 	{
 		comparisons++;
-		/*x = Integer.valueOf(l);
-		y = Integer.valueOf(r);
-		return x.compareTo(y);*/
 		
 		if(arr[r] <=arr[l])
 			return true;
