@@ -105,8 +105,11 @@ public class quickselect {
 		Scanner inputScanner = new Scanner(System.in);
 		ArrayList <Integer> input = new ArrayList<Integer>();
 		int n = 0;
+		int temp = 0;
 		while (inputScanner.hasNext()){
-			input.add(new Integer(inputScanner.nextInt()));
+			temp = inputScanner.nextInt();
+			input.add(new Integer(temp));
+
 			n++;
 		}
 		inputScanner.close();
