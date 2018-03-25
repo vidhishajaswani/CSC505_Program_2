@@ -26,15 +26,11 @@ public class quickselect {
 			pivotIndex = b;
 		}
 		else{
-
 			ArrayList <Elements> em = new ArrayList<Elements>();
-
 			em.add(new Elements(arr[a], a));
 			em.add(new Elements(arr[b], b));
 			em.add(new Elements(arr[(b-a)/2], (b-a)/2));
 
-			//System.out.println("Before : " + arr[a] + " " + arr[b] + " " + arr[(b-a)/2]);
-			//System.out.println("Before : " + a + " " + b + " " + (b-a)/2);
 			Collections.sort(em, new Comparator<Elements>(){
 			          //@Override
 			          public int compare(Elements a, Elements b){
@@ -53,24 +49,16 @@ public class quickselect {
 				indexArray[i] = e.index;
 				i++;
 			}
-			//System.out.println("After : " + Arrays.toString(indexArray));
 
 			//System.out.println("before :" + Arrays.toString(arr));
-<<<<<<< HEAD
 			//int indexToBeSwapped = indexArray[1];
 			int indexToBeSwapped = a+(b-a)/2;
-=======
-			int indexToBeSwapped = (b-a)/2;
-			//int indexToBeSwapped = indexArray[1];
-			//System.out.println("Selected : " + indexToBeSwapped);
->>>>>>> 5022b503c5dc285adbd61263d7ff20ddffa8e7ec
 			int temp = arr[b];
 			arr[b] = arr[indexToBeSwapped];
 			arr[indexToBeSwapped] = temp;
 			//System.out.println("after :" + Arrays.toString(arr));
 			pivotIndex = b;
 		}
-
 		int temp = 0;
 		int i = a - 1;
 		for(int j = a; j < b; j++){
@@ -105,7 +93,6 @@ public class quickselect {
 			int index = giveCorrectIndex(arr, a, b);
 
 			if(index == medianIndex){
-
 				return index;
 			}
 			else if(index > medianIndex){
@@ -123,12 +110,8 @@ public class quickselect {
 		Scanner inputScanner = new Scanner(System.in);
 		ArrayList <Integer> input = new ArrayList<Integer>();
 		int n = 0;
-		int temp = 0;
 		while (inputScanner.hasNext()){
-			temp = inputScanner.nextInt();
-			input.add(new Integer(temp));
-			System.out.println(temp);
-
+			input.add(new Integer(inputScanner.nextInt()));
 			n++;
 		}
 		inputScanner.close();
@@ -137,7 +120,6 @@ public class quickselect {
 		for(Integer intobject : input){
 			arr[i++] = intobject.intValue();
 		}
-		System.out.println(Arrays.toString(arr));
 		quickselect qs = new quickselect();
         long startTime = System.currentTimeMillis();
 		int index=qs.quickselect(arr, 0, n-1);
@@ -158,7 +140,7 @@ public class quickselect {
         System.out.println("runtime," + runtime);
 
 
-		System.out.println(Arrays.toString(arr));
+		//System.out.println(Arrays.toString(arr));
 	}
 	
 	//overridden function compareTo that increments the global counter
