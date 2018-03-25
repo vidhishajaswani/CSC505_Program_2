@@ -1,11 +1,10 @@
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.Collections;
 
 
-
+//class to store index and value of first, last and mid elements of original array
 class Elements{
 	int value;
 	int index;
@@ -14,18 +13,21 @@ class Elements{
 		this.index = b;
 	}
 }
+
 public class quickselect {
 
-	static int comparisons=0;
+	static int comparisons=0;		//global variable to store number of comparisons
 	static Integer x, y;
 
 	int giveCorrectIndex(int arr[], int a, int b){
 		int pivotIndex = 0;
 
 		if((b-a+1) < 9){
-			pivotIndex = b;
+			pivotIndex = b;			//if number of elements of sub-instance less than 9, set pivot as last element
 		}
 		else{
+			
+			//if number of elements of sub-instance more than 9, pick first last and mid elements and sort to pick median
 			ArrayList <Elements> em = new ArrayList<Elements>();
 			em.add(new Elements(arr[a], a));
 			em.add(new Elements(arr[b], b));
@@ -40,7 +42,7 @@ public class quickselect {
 										return -1;
 									}
 			          }
-			        });
+			 });
 			int[] valueArray = new int[3];
 			int[] indexArray = new int[3];
 			int i = 0;
@@ -49,55 +51,50 @@ public class quickselect {
 				indexArray[i] = e.index;
 				i++;
 			}
-
-			//System.out.println("before :" + Arrays.toString(arr));
+			// swap the selected element with the last element of the array
 			int indexToBeSwapped = indexArray[1];
-			//int indexToBeSwapped = a+(b-a)/2;
 			int temp = arr[b];
 			arr[b] = arr[indexToBeSwapped];
 			arr[indexToBeSwapped] = temp;
-			//System.out.println("after :" + Arrays.toString(arr));
 			pivotIndex = b;
 		}
+		
 		int temp = 0;
 		int i = a - 1;
 		for(int j = a; j < b; j++){
-			if(arr[j] < arr[pivotIndex]){
-				//System.out.println("a[j]  :" +arr[j]);
-
+			//if(arr[j] < arr[pivotIndex]){
+			if(compare(arr,pivotIndex,j)) {
+				//arrange elements such that elements on left of pivot are less than pivot and more than it are on right 
 				i++;
 				temp = arr[i];
 				arr[i] = arr[j];
 				arr[j] = temp;
 			}
 		}
-		//System.out.println("a  :" +a+" val of a: "+arr[a]+"  b: "+b+"  val of b: "+arr[b]);
-		//System.out.println("b-a/2"+(b-a)/2);
-
-		//System.out.println("pivot  :" +arr[pivotIndex]);
+		//keep pivot at final position
 		temp = arr[i+1];
 		arr[i+1] = arr[pivotIndex];
 		arr[pivotIndex] = temp;
-		//System.out.println("pivot swapp :" + Arrays.toString(arr));
-		//System.out.println("pivot  :" +arr[pivotIndex]);
-
-
 		return i + 1;
-
-
 	}
 
 	int quickselect(int arr[], int a, int b){
 		int medianIndex = (arr.length-1)/2;
 		if(a <= b){
+			//find partition index
 			int index = giveCorrectIndex(arr, a, b);
 
+			//if partition is the median index, stop
 			if(index == medianIndex){
 				return index;
 			}
+			
+			//if partition value more, search only first half of the array
 			else if(index > medianIndex){
 				return quickselect(arr, a, index - 1);
-			}else{
+			}
+			//else second half
+			else{
 				return quickselect(arr, index + 1, b);
 			}
 		}
@@ -107,6 +104,7 @@ public class quickselect {
 
 	public static void main(String args[])
 	{
+		//take standard input
 		Scanner inputScanner = new Scanner(System.in);
 		ArrayList <Integer> input = new ArrayList<Integer>();
 		int n = 0;
@@ -132,24 +130,26 @@ public class quickselect {
           throw new IllegalArgumentException(elapsedTime + "cannot convert to int without modifying value");
         }
         int runtime = (int) elapsedTime;
-		//System.out.println("main :" + Arrays.toString(arr));
 
 		System.out.println("median," + arr[index]);
-		System.out.println("index," + index);
-		
         System.out.println("runtime," + runtime);
+		System.out.println("comparisons," + comparisons);		
 
 
-		//System.out.println(Arrays.toString(arr));
 	}
 	
 	//overridden function compareTo that increments the global counter
-	public static int compare(int l,int r)
+	public static boolean compare(int arr[],int l,int r)
 	{
 		comparisons++;
-		x = Integer.valueOf(l);
+		/*x = Integer.valueOf(l);
 		y = Integer.valueOf(r);
-		return x.compareTo(y);
+		return x.compareTo(y);*/
+		
+		if(arr[r] <=arr[l])
+			return true;
+		else return false;
+			
 	}
 
 
