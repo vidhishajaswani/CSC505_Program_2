@@ -109,6 +109,7 @@ public class quickselect {
 		while (inputScanner.hasNext()){
 			temp = inputScanner.nextInt();
 			input.add(new Integer(temp));
+			System.out.println(temp);
 
 			n++;
 		}
