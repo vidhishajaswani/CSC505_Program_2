@@ -38,7 +38,7 @@ public abstract class DefaultSelect implements Comparable<Integer>
         //Record system time at end
         long endTime = System.currentTimeMillis();
         
-        //Difference is elapsed time and conver to integer.
+        //Difference is elapsed time and convert to integer.
         long elapsedTime = endTime - startTime;
         
         //Check to see if long goes over max integer value
@@ -57,9 +57,8 @@ public abstract class DefaultSelect implements Comparable<Integer>
           myArray[i++] = intobject.intValue();
         }
         
-        int kIndex = (int)Math.floor((myArray.length + 1)/2);
-        int index = kIndex - 2;
-        System.out.println("median," + myArray[kIndex - 1]);
+        int kIndex = (myArray.length - 1)/2;
+        System.out.println("median," + myArray[kIndex]);
         System.out.println("runtime," + runtime);
         System.out.println("comparisons," + comparisons);
     }
