@@ -10,6 +10,7 @@ public abstract class DefaultSelect implements Comparable<Integer>
     static int comparisons=0;   //global variable to store number of comparisons
     public static void main(String[] args) 
     {
+        //take input from standard input
         Scanner inputScanner = new Scanner(System.in);
         ArrayList <Integer> input = new ArrayList<Integer>();
         int length = 0;
@@ -61,5 +62,7 @@ public abstract class DefaultSelect implements Comparable<Integer>
         int kIndex = (int)Math.floor((myArray.length + 1)/2);
         int index = kIndex - 2;
         System.out.println("median," + myArray[kIndex - 1]);
+        System.out.println("runtime," + runtime);
+        System.out.println("comparisons," + comparisons);
     }
 }
